@@ -49,10 +49,10 @@ namespace DeleteAllListViewItems.Module
             GridListEditor editor = (View as ListView).Editor as GridListEditor;
             if (editor != null)
             {
-                using (IObjectSpace objectSpace = Application.CreateObjectSpace())
+                Type type = ((ListView)View).ObjectTypeInfo.Type;
+                using (IObjectSpace objectSpace = Application.CreateObjectSpace(type))
                 {
                     ArrayList objectsToDelete = new ArrayList();
-                    Type type = ((ListView)View).ObjectTypeInfo.Type;
                     objectsToDelete.AddRange(objectSpace.GetObjects(type, editor.GridView.ActiveFilterCriteria));
                     objectSpace.Delete(objectsToDelete);
                     objectSpace.CommitChanges();

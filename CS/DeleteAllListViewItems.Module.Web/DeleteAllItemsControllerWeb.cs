@@ -50,10 +50,10 @@ namespace DeleteAllListViewItems.Module
             if (listEditor != null)
             {
 
-                using (IObjectSpace objectSpace = Application.CreateObjectSpace())
+                Type type = ((ListView)View).ObjectTypeInfo.Type;
+                using (IObjectSpace objectSpace = Application.CreateObjectSpace(type))
                 {
                     ArrayList objectsToDelete = new ArrayList();
-                    Type type = ((ListView)View).ObjectTypeInfo.Type;
                     objectsToDelete.AddRange(objectSpace.GetObjects(type, CriteriaOperator.Parse(listEditor.Grid.FilterExpression)));
                     objectSpace.Delete(objectsToDelete);
                     objectSpace.CommitChanges();
