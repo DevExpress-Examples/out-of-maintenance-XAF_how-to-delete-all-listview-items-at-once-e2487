@@ -23,6 +23,10 @@ namespace DeleteAllListViewItems.Web
             InitializeComponent();
         }
 
+        protected override void CreateDefaultObjectSpaceProvider(DevExpress.ExpressApp.CreateCustomObjectSpaceProviderEventArgs args) {
+            args.ObjectSpaceProvider = new DevExpress.ExpressApp.Xpo.XPObjectSpaceProvider(args.ConnectionString, args.Connection);
+        }
+
         private void DeleteAllListViewItemsAspNetApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e)
         {
 

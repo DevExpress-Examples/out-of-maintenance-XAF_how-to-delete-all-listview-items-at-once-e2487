@@ -1,5 +1,5 @@
-<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
-<%@ Register TagPrefix="dxpg" Namespace="DevExpress.Web.ASPxPager" Assembly="DevExpress.Web.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v13.1" %>
+<%@ Register TagPrefix="dxpg" Namespace="DevExpress.Web.ASPxPager" Assembly="DevExpress.Web.v13.1" %>
 <dxpg:ASPxPager runat="server" CssFilePath="{0}/styles.css" CssPostfix="Aqua" 
     SpriteCssFilePath="{0}/sprite.css" CurrentPageNumberFormat="{0}" ShowNumericButtons="True">
     <Summary Visible="False" />

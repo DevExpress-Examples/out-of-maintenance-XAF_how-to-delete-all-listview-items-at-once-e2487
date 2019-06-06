@@ -43,10 +43,9 @@ Namespace DeleteAllListViewItems.Module
 		Private Sub simpleAction1_Execute(ByVal sender As Object, ByVal e As SimpleActionExecuteEventArgs) Handles simpleAction1.Execute
 			Dim listEditor As ASPxGridListEditor = TryCast((CType(View, ListView)).Editor, ASPxGridListEditor)
 			If listEditor IsNot Nothing Then
-
-				Using objectSpace As IObjectSpace = Application.CreateObjectSpace()
+				Dim type As Type = (CType(View, ListView)).ObjectTypeInfo.Type
+				Using objectSpace As IObjectSpace = Application.CreateObjectSpace(type)
 					Dim objectsToDelete As New ArrayList()
-					Dim type As Type = (CType(View, ListView)).ObjectTypeInfo.Type
 					objectsToDelete.AddRange(objectSpace.GetObjects(type, CriteriaOperator.Parse(listEditor.Grid.FilterExpression)))
 					objectSpace.Delete(objectsToDelete)
 					objectSpace.CommitChanges()

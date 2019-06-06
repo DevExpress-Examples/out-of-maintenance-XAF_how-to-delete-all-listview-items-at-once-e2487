@@ -35,6 +35,8 @@ namespace Solution1.Web
 				WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
 			}
 #endif
+            DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.Register();
+            WebApplication.Instance.ConnectionString = DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.ConnectionString;
             if (ConfigurationManager.ConnectionStrings["ConnectionString"] != null)
             {
                 WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
