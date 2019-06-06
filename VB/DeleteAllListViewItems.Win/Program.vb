@@ -27,7 +27,10 @@ Namespace DeleteAllListViewItems.Win
 			EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached
 			Dim winApplication As New DeleteAllListViewItemsWindowsFormsApplication()
 
-			If ConfigurationManager.ConnectionStrings("ConnectionString") IsNot Nothing Then
+            DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.Register()
+            winApplication.ConnectionString = DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.ConnectionString
+
+            If ConfigurationManager.ConnectionStrings("ConnectionString") IsNot Nothing Then
 				winApplication.ConnectionString = ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString
 			End If
 			Try

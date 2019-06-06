@@ -32,7 +32,10 @@ Namespace Solution1.Web
 				WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings("EasyTestConnectionString").ConnectionString
 			End If
 #End If
-			If ConfigurationManager.ConnectionStrings("ConnectionString") IsNot Nothing Then
+            DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.Register()
+            WebApplication.Instance.ConnectionString = DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.ConnectionString
+
+            If ConfigurationManager.ConnectionStrings("ConnectionString") IsNot Nothing Then
 				WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString
 			End If
 			WebApplication.Instance.Setup()

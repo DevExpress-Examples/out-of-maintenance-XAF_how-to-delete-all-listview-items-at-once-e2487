@@ -27,6 +27,8 @@ namespace DeleteAllListViewItems.Win
             EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached;
             DeleteAllListViewItemsWindowsFormsApplication winApplication = new DeleteAllListViewItemsWindowsFormsApplication();
 
+            DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.Register();
+            winApplication.ConnectionString = DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.ConnectionString;
             if (ConfigurationManager.ConnectionStrings["ConnectionString"] != null)
             {
                 winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
