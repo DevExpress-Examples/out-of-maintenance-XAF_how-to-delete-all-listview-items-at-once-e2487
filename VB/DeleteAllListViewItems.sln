@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 10.00
+﻿Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DeleteAllListViewItems.Module", "DeleteAllListViewItems.Module\DeleteAllListViewItems.Module.vbproj", "{BDB0F054-62E2-4BD2-BB9E-BB340DC3DEDF}"
 EndProject

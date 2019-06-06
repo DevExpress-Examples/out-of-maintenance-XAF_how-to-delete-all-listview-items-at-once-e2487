@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Configuration
 Imports System.Web.Configuration
 Imports System.Web
@@ -14,6 +13,7 @@ Imports DevExpress.Web.ASPxClasses
 Namespace Solution1.Web
 	Public Class [Global]
 		Inherits System.Web.HttpApplication
+
 		Public Sub New()
 			InitializeComponent()
 		End Sub
@@ -32,10 +32,9 @@ Namespace Solution1.Web
 				WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings("EasyTestConnectionString").ConnectionString
 			End If
 #End If
-            DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.Register()
-            WebApplication.Instance.ConnectionString = DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.ConnectionString
-
-            If ConfigurationManager.ConnectionStrings("ConnectionString") IsNot Nothing Then
+			DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.Register()
+			WebApplication.Instance.ConnectionString = DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.ConnectionString
+			If ConfigurationManager.ConnectionStrings("ConnectionString") IsNot Nothing Then
 				WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString
 			End If
 			WebApplication.Instance.Setup()
@@ -43,7 +42,7 @@ Namespace Solution1.Web
 		End Sub
 		Protected Sub Application_BeginRequest(ByVal sender As Object, ByVal e As EventArgs)
 			Dim filePath As String = HttpContext.Current.Request.PhysicalPath
-			If (Not String.IsNullOrEmpty(filePath)) AndAlso (filePath.IndexOf("Images") >= 0) AndAlso (Not System.IO.File.Exists(filePath)) Then
+			If Not String.IsNullOrEmpty(filePath) AndAlso (filePath.IndexOf("Images") >= 0) AndAlso Not System.IO.File.Exists(filePath) Then
 				HttpContext.Current.Response.End()
 			End If
 		End Sub

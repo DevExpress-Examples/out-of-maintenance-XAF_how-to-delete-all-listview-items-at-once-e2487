@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 
 Imports DevExpress.ExpressApp.Updating
 Imports DevExpress.Xpo
@@ -7,6 +6,7 @@ Imports DevExpress.Xpo
 Namespace DeleteAllListViewItems.Module.Win
 	Public Class Updater
 		Inherits ModuleUpdater
+
 		Public Sub New(ByVal objectSpace As DevExpress.ExpressApp.IObjectSpace, ByVal currentDBVersion As Version)
 			MyBase.New(objectSpace, currentDBVersion)
 		End Sub

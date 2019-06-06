@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace DeleteAllListViewItems.Module
+﻿Namespace DeleteAllListViewItems.Module
 	Partial Public Class DeleteAllItemsController
 		''' <summary>
 		''' Required designer variable.
@@ -41,7 +39,8 @@ Namespace DeleteAllListViewItems.Module
 			Me.simpleAction1.TargetViewType = DevExpress.ExpressApp.ViewType.ListView
 			Me.simpleAction1.ToolTip = Nothing
 			Me.simpleAction1.TypeOfView = GetType(DevExpress.ExpressApp.ListView)
-'			Me.simpleAction1.Execute += New DevExpress.ExpressApp.Actions.SimpleActionExecuteEventHandler(Me.simpleAction1_Execute);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.simpleAction1.Execute += new DevExpress.ExpressApp.Actions.SimpleActionExecuteEventHandler(this.simpleAction1_Execute);
 
 		End Sub
 

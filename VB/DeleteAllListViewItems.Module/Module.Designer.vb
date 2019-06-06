@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace DeleteAllListViewItems.Module
+﻿Namespace DeleteAllListViewItems.Module
 	Partial Public Class DeleteAllListViewItemsModule
 		''' <summary> 
 		''' Required designer variable.

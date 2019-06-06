@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.ComponentModel
 Imports System.Collections.Generic
 Imports System.Diagnostics
@@ -15,6 +14,7 @@ Imports DevExpress.Data.Filtering
 Namespace DeleteAllListViewItems.Module
 	Partial Public Class DeleteAllItemsController
 		Inherits ViewController
+
 		Public Sub New()
 			InitializeComponent()
 			RegisterActions(components)
@@ -35,7 +35,7 @@ Namespace DeleteAllListViewItems.Module
 
 
 		Private Sub UpdateActionState()
-			Dim type As Type = (CType(View, ListView)).ObjectTypeInfo.Type
+			Dim type As Type = CType(View, ListView).ObjectTypeInfo.Type
 			Me.simpleAction1.Enabled.SetItemValue("ItemsCount", View.ObjectSpace.GetObjects(type).Count > 0)
 		End Sub
 
@@ -43,7 +43,7 @@ Namespace DeleteAllListViewItems.Module
 		Private Sub simpleAction1_Execute(ByVal sender As Object, ByVal e As SimpleActionExecuteEventArgs) Handles simpleAction1.Execute
 			Dim editor As GridListEditor = TryCast((TryCast(View, ListView)).Editor, GridListEditor)
 			If editor IsNot Nothing Then
-				Dim type As Type = (CType(View, ListView)).ObjectTypeInfo.Type
+				Dim type As Type = CType(View, ListView).ObjectTypeInfo.Type
 				Using objectSpace As IObjectSpace = Application.CreateObjectSpace(type)
 					Dim objectsToDelete As New ArrayList()
 					objectsToDelete.AddRange(objectSpace.GetObjects(type, editor.GridView.ActiveFilterCriteria))

@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 Imports System.ComponentModel
 Imports DevExpress.ExpressApp
@@ -9,6 +8,7 @@ Imports DevExpress.ExpressApp.Xpo
 Namespace Solution1.Web
 	Partial Public Class Solution1AspNetApplication
 		Inherits WebApplication
+
 		Private module1 As DevExpress.ExpressApp.SystemModule.SystemModule
 		Private module2 As DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule
 		Private module3 As Solution1.Module.Solution1Module
@@ -23,7 +23,7 @@ Namespace Solution1.Web
 			args.ObjectSpaceProvider = New XPObjectSpaceProviderThreadSafe(args.ConnectionString, args.Connection)
 		End Sub
 
-		Private Sub Solution1AspNetApplication_DatabaseVersionMismatch(ByVal sender As Object, ByVal e As DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs) Handles MyBase.DatabaseVersionMismatch
+		Private Sub Solution1AspNetApplication_DatabaseVersionMismatch(ByVal sender As Object, ByVal e As DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs) Handles Me.DatabaseVersionMismatch
 #If EASYTEST Then
 			e.Updater.Update()
 			e.Handled = True
@@ -32,10 +32,18 @@ Namespace Solution1.Web
 				e.Updater.Update()
 				e.Handled = True
 			Else
-				Dim message As String = "The application cannot connect to the specified database, because the latter doesn't exist or its version is older than that of the application." & Constants.vbCrLf & "This error occurred  because the automatic database update was disabled when the application was started without debugging." & Constants.vbCrLf & "To avoid this error, you should either start the application under Visual Studio in debug mode, or modify the " & "source code of the 'DatabaseVersionMismatch' event handler to enable automatic database update, " & "or manually create a database using the 'DBUpdater' tool." & Constants.vbCrLf & "Anyway, refer to the following help topics for more detailed information:" & Constants.vbCrLf & "'Update Application and Database Versions' at http://www.devexpress.com/Help/?document=ExpressApp/CustomDocument2795.htm" & Constants.vbCrLf & "'Database Security References' at http://www.devexpress.com/Help/?document=ExpressApp/CustomDocument3237.htm" & Constants.vbCrLf & "If this doesn't help, please contact our Support Team at http://www.devexpress.com/Support/Center/"
+				Dim message As String = "The application cannot connect to the specified database, because the latter doesn't exist or its version is older than that of the application." & vbCrLf &
+					"This error occurred  because the automatic database update was disabled when the application was started without debugging." & vbCrLf &
+					"To avoid this error, you should either start the application under Visual Studio in debug mode, or modify the " &
+					"source code of the 'DatabaseVersionMismatch' event handler to enable automatic database update, " &
+					"or manually create a database using the 'DBUpdater' tool." & vbCrLf &
+					"Anyway, refer to the following help topics for more detailed information:" & vbCrLf &
+					"'Update Application and Database Versions' at http://www.devexpress.com/Help/?document=ExpressApp/CustomDocument2795.htm" & vbCrLf &
+					"'Database Security References' at http://www.devexpress.com/Help/?document=ExpressApp/CustomDocument3237.htm" & vbCrLf &
+					"If this doesn't help, please contact our Support Team at http://www.devexpress.com/Support/Center/"
 
 				If e.CompatibilityError IsNot Nothing AndAlso e.CompatibilityError.Exception IsNot Nothing Then
-					message &= Constants.vbCrLf & Constants.vbCrLf & "Inner exception: " & e.CompatibilityError.Exception.Message
+					message &= vbCrLf & vbCrLf & "Inner exception: " & e.CompatibilityError.Exception.Message
 				End If
 				Throw New InvalidOperationException(message)
 			End If
@@ -48,7 +56,7 @@ Namespace Solution1.Web
 			Me.module3 = New Solution1.Module.Solution1Module()
 			Me.module4 = New Solution1.Module.Web.Solution1AspNetModule()
 			Me.sqlConnection1 = New System.Data.SqlClient.SqlConnection()
-			CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
+			DirectCast(Me, System.ComponentModel.ISupportInitialize).BeginInit()
 			' 
 			' sqlConnection1
 			' 
@@ -64,8 +72,9 @@ Namespace Solution1.Web
 			Me.Modules.Add(Me.module3)
 			Me.Modules.Add(Me.module4)
 
-'			Me.DatabaseVersionMismatch += New System.EventHandler(Of DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs)(Me.Solution1AspNetApplication_DatabaseVersionMismatch);
-			CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.Solution1AspNetApplication_DatabaseVersionMismatch);
+			DirectCast(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
 		End Sub
 	End Class

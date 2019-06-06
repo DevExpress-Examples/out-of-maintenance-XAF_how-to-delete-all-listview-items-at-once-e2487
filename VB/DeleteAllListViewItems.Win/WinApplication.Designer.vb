@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace DeleteAllListViewItems.Win
+﻿Namespace DeleteAllListViewItems.Win
 	Partial Public Class DeleteAllListViewItemsWindowsFormsApplication
 		''' <summary> 
 		''' Required designer variable.
@@ -55,7 +53,8 @@ Namespace DeleteAllListViewItems.Win
 			' 
 			' sqlConnection1
 			' 
-			Me.sqlConnection1.ConnectionString = "Data Source=(local);Initial Catalog=DeleteAllListViewItems;Integrated Security=SS" & "PI;Pooling=false"
+			Me.sqlConnection1.ConnectionString = "Data Source=(local);Initial Catalog=DeleteAllListViewItems;Integrated Security=SS" &
+				"PI;Pooling=false"
 			Me.sqlConnection1.FireInfoMessageEventOnUserErrors = False
 			' 
 			' DeleteAllListViewItemsWindowsFormsApplication
@@ -71,7 +70,8 @@ Namespace DeleteAllListViewItems.Win
 			Me.Modules.Add(Me.securityModule1)
 			Me.Modules.Add(Me.deleteAllListViewItemsWindowsFormsModule1)
 			Me.Security = Me.securitySimple1
-'			Me.DatabaseVersionMismatch += New System.EventHandler(Of DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs)(Me.DeleteAllListViewItemsWindowsFormsApplication_DatabaseVersionMismatch);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.DeleteAllListViewItemsWindowsFormsApplication_DatabaseVersionMismatch);
 			CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
 		End Sub
