@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -17,7 +17,7 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -35,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,6 +44,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,60 +53,67 @@
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Printing.v13.1.Core">
+    <Reference Include="DevExpress.Pdf.v21.2.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Data.v13.1">
+    <Reference Include="DevExpress.RichEdit.v21.2.Export">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Images.v13.1">
+    <Reference Include="DevExpress.Printing.v21.2.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Objects.v13.1">
+    <Reference Include="DevExpress.Data.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Security.v13.1">
+    <Reference Include="DevExpress.Images.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Xpo.v13.1">
+    <Reference Include="DevExpress.ExpressApp.Objects.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.v13.1">
+    <Reference Include="DevExpress.ExpressApp.Security.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Validation.v13.1">
+    <Reference Include="DevExpress.ExpressApp.Security.Xpo.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Web.v13.1">
+    <Reference Include="DevExpress.ExpressApp.Xpo.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Persistent.Base.v13.1">
+    <Reference Include="DevExpress.ExpressApp.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Persistent.BaseImpl.v13.1">
+    <Reference Include="DevExpress.ExpressApp.Validation.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Web.ASPxThemes.v13.1">
+    <Reference Include="DevExpress.ExpressApp.Web.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Office.v13.1.Core">
+    <Reference Include="DevExpress.Persistent.Base.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Docs.v13.1">
+    <Reference Include="DevExpress.Persistent.BaseImpl.Xpo.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v13.1.Core">
+    <Reference Include="DevExpress.Web.ASPxThemes.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Web.v13.1">
+    <Reference Include="DevExpress.Office.v21.2.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Xpo.v13.1.Web">
+    <Reference Include="DevExpress.Docs.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Xpo.v13.1">
+    <Reference Include="DevExpress.RichEdit.v21.2.Core">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Web.v21.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System">
@@ -213,59 +222,6 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Themes\Aqua\Xaf\background.jpg" />
-    <Content Include="App_Themes\Aqua\Xaf\BackgroundRepeat.gif" />
-    <Content Include="App_Themes\Aqua\Xaf\DialogBackImage.jpg" />
-    <Content Include="App_Themes\Aqua\Xaf\DialogBackRepeat.gif" />
-    <Content Include="App_Themes\Aqua\Xaf\Logo.gif" />
-    <Content Include="App_Themes\Aqua\Xaf\Logo.png" />
-    <Content Include="App_Themes\Aqua\Xaf\LogoSmall.png" />
-    <Content Include="App_Themes\Aqua\Xaf\styles_xaf.css" />
-    <Content Include="App_Themes\Aqua\Xaf\template.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Themes\Aqua\ASPxButton.skin" />
-    <Content Include="App_Themes\Aqua\ASPxButtonEdit.skin" />
-    <Content Include="App_Themes\Aqua\ASPxCalendar.skin" />
-    <Content Include="App_Themes\Aqua\ASPxCallbackPanel.skin" />
-    <Content Include="App_Themes\Aqua\ASPxCaptcha.skin" />
-    <Content Include="App_Themes\Aqua\ASPxCheckBox.skin" />
-    <Content Include="App_Themes\Aqua\ASPxCloudControl.skin" />
-    <Content Include="App_Themes\Aqua\ASPxColorEdit.skin" />
-    <Content Include="App_Themes\Aqua\ASPxComboBox.skin" />
-    <Content Include="App_Themes\Aqua\ASPxDataView.skin" />
-    <Content Include="App_Themes\Aqua\ASPxDateEdit.skin" />
-    <Content Include="App_Themes\Aqua\ASPxDropDownEdit.skin" />
-    <Content Include="App_Themes\Aqua\ASPxFilterControl.skin" />
-    <Content Include="App_Themes\Aqua\ASPxGridView.skin" />
-    <Content Include="App_Themes\Aqua\ASPxHeadline.skin" />
-    <Content Include="App_Themes\Aqua\ASPxHyperLink.skin" />
-    <Content Include="App_Themes\Aqua\ASPxLabel.skin" />
-    <Content Include="App_Themes\Aqua\ASPxListBox.skin" />
-    <Content Include="App_Themes\Aqua\ASPxLoadingPanel.skin" />
-    <Content Include="App_Themes\Aqua\ASPxMemo.skin" />
-    <Content Include="App_Themes\Aqua\ASPxMenu.skin" />
-    <Content Include="App_Themes\Aqua\ASPxNavBar.skin" />
-    <Content Include="App_Themes\Aqua\ASPxNewsControl.skin" />
-    <Content Include="App_Themes\Aqua\ASPxPageControl.skin" />
-    <Content Include="App_Themes\Aqua\ASPxPager.skin" />
-    <Content Include="App_Themes\Aqua\ASPxPopupControl.skin" />
-    <Content Include="App_Themes\Aqua\ASPxPopupMenu.skin" />
-    <Content Include="App_Themes\Aqua\ASPxProgressBar.skin" />
-    <Content Include="App_Themes\Aqua\ASPxRadioButton.skin" />
-    <Content Include="App_Themes\Aqua\ASPxRadioButtonList.skin" />
-    <Content Include="App_Themes\Aqua\ASPxRatingControl.skin" />
-    <Content Include="App_Themes\Aqua\ASPxRoundPanel.skin" />
-    <Content Include="App_Themes\Aqua\ASPxSiteMapControl.skin" />
-    <Content Include="App_Themes\Aqua\ASPxSpinEdit.skin" />
-    <Content Include="App_Themes\Aqua\ASPxSplitter.skin" />
-    <Content Include="App_Themes\Aqua\ASPxTabControl.skin" />
-    <Content Include="App_Themes\Aqua\ASPxTextBox.skin" />
-    <Content Include="App_Themes\Aqua\ASPxTimeEdit.skin" />
-    <Content Include="App_Themes\Aqua\ASPxTitleIndex.skin" />
-    <Content Include="App_Themes\Aqua\ASPxTreeList.skin" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DeleteAllListViewItems.Module.Web\DeleteAllListViewItems.Module.Web.csproj">

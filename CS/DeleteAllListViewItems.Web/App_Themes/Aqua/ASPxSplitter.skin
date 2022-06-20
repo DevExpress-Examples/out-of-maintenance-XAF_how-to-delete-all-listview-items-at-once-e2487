@@ -1,5 +1,0 @@
-<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v13.1" %>
-<%@ Register TagPrefix="dx" Namespace="DevExpress.Web.ASPxSplitter" Assembly="DevExpress.Web.v13.1" %>
-<dx:ASPxSplitter runat="server" CssPostfix="Aqua" CssFilePath="{0}/styles.css">
-    <Images SpriteCssFilePath="{0}/sprite.css"></Images>
-</dx:ASPxSplitter>

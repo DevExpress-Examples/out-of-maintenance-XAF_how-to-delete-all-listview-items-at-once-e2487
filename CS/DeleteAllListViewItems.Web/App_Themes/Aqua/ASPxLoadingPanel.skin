@@ -1,5 +1,0 @@
-<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v13.1" %>
-<%@ Register TagPrefix="dxlp" Namespace="DevExpress.Web.ASPxLoadingPanel" Assembly="DevExpress.Web.v13.1" %>
-<dxlp:ASPxLoadingPanel runat="server" CssFilePath="{0}/styles.css" CssPostfix="Aqua" ImagePosition="Top">
-    <Image Url="Web/Loading.gif"></Image>
-</dxlp:ASPxLoadingPanel>

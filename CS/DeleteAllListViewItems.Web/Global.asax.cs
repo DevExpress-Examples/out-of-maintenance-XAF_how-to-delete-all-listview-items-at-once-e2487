@@ -8,7 +8,7 @@ using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Web;
-using DevExpress.Web.ASPxClasses;
+using DevExpress.Web;
 
 namespace Solution1.Web
 {
@@ -20,6 +20,7 @@ namespace Solution1.Web
         }
         protected void Application_Start(Object sender, EventArgs e)
         {
+            DevExpress.ExpressApp.FrameworkSettings.DefaultSettingsCompatibilityMode = DevExpress.ExpressApp.FrameworkSettingsCompatibilityMode.v20_1;
             ASPxWebControl.CallbackError += new EventHandler(Application_Error);
 
 #if EASYTEST

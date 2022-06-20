@@ -1,5 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteAllListViewItems.Module", "DeleteAllListViewItems.Module\DeleteAllListViewItems.Module.csproj", "{BDB0F054-62E2-4BD2-BB9E-BB340DC3DEDF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteAllListViewItems.Web", "DeleteAllListViewItems.Web\DeleteAllListViewItems.Web.csproj", "{BFD1CF61-6FB3-4CD4-9E0D-5924FFA53ABB}"
@@ -50,5 +52,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEE32B3A-15E8-4D71-8BB2-A13447C26C67}
 	EndGlobalSection
 EndGlobal
